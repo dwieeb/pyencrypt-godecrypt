@@ -18,6 +18,7 @@ func Decrypt(text []byte) ([]byte, error) {
 	}
 	iv := text[:aes.BlockSize]
 	text = text[aes.BlockSize:]
+	log.Println(len(text))
 	cfb := cipher.NewCFBDecrypter(block, iv)
 	cfb.XORKeyStream(text, text)
 

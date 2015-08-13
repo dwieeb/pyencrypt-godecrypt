@@ -9,6 +9,7 @@ class AESCipher:
         iv = Random.new().read(AES.block_size)
         cipher = AES.new(self.key, AES.MODE_CFB, iv)
         encrypted = cipher.encrypt(raw)
+        print(len(encrypted))
         return iv + encrypted
 
     def decrypt(self, raw):
