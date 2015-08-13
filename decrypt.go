@@ -36,4 +36,8 @@ func main() {
 	}
 
 	log.Printf("%s", d)
+	
+	if string(d) != "my small message" {
+		log.Printf("Well, that didn't work.")
+	}
 }
